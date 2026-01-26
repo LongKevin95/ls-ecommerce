@@ -1,0 +1,285 @@
+.checkout-page {
+  padding: var(--space-xl-plus) 0;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-xl-plus);
+  align-items: start;
+}
+
+.checkout-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+}
+
+.checkout-form {
+  display: grid;
+  gap: var(--space-unit);
+}
+
+.checkout-field {
+  display: grid;
+  gap: 10px;
+}
+
+.checkout-field label {
+  font-size: 14px;
+  color: #666;
+}
+
+.is-required {
+  color: #e00;
+}
+
+.checkout-field input {
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  background: #f6f6f6;
+  padding: 0 16px;
+  outline: none;
+}
+
+.checkout-field input:focus {
+  background: #fff;
+  border-color: #ccc;
+}
+
+.checkout-checkbox {
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+}
+
+.checkout-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-btn-bg);
+  cursor: pointer;
+}
+
+.checkout-save {
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+.checkout-save input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-btn-bg);
+}
+
+.checkout-summary {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.summary-products {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.summary-items {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.summary-item__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.summary-item__img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #f6f6f6;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.summary-item__name {
+  font-size: var(--text-base-size);
+  font-weight: 700;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary-item__qty {
+  font-size: 12px;
+  color: #777;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.summary-item__price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.summary-empty {
+  padding: 12px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.summary-totals {
+  display: grid;
+  gap: 12px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.summary-row__label,
+.summary-row__value {
+  color: #222;
+}
+
+.summary-row--strong {
+  font-weight: 700;
+}
+
+.summary-row--total {
+  font-weight: 700;
+  font-size: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+  margin-top: 8px;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #ddd;
+  width: 100%;
+}
+
+.summary-payment {
+  display: grid;
+  gap: 14px;
+}
+
+.summary-payments {
+  display: grid;
+  gap: 14px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #222;
+}
+
+.payment-option input {
+  width: 16px;
+  height: 16px;
+  accent-color: #111;
+}
+
+.payment-option__label {
+  flex: 1;
+}
+
+.payment-cards {
+  font-size: 12px;
+  color: #999;
+}
+
+.summary-coupon {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+}
+
+.summary-coupon__input {
+  height: 52px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 0 16px;
+  outline: none;
+}
+
+.summary-coupon__btn {
+  height: 52px;
+  border-radius: 6px;
+  padding: 0 24px;
+  white-space: nowrap;
+}
+
+.summary-place-order {
+  width: 220px;
+  height: 52px;
+  border-radius: 6px;
+}
+
+@media (max-width: 1024px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-title {
+    font-size: 28px;
+  }
+
+  .summary-place-order {
+    width: 100%;
+  }
+}
+.summary-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.summary-item__qty {
+  font-size: 12px;
+  color: #999;
+}
+.summary-empty {
+  border: 1px dashed #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fafafa;
+}
+.summary-empty__text {
+  margin: 0 0 12px;
+  color: #444;
+  font-size: 14px;
+}
+.summary-empty__btn {
+  height: 44px;
+  border-radius: 6px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

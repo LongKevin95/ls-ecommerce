@@ -1,0 +1,60 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+}
+
+.category-page {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  min-height: 700px;
+}
+
+#categoryTitle {
+  margin-bottom: var(--space-lg);
+}
+
+.category-select {
+  width: 100%;
+  max-width: 360px;
+  height: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  background: #fff;
+  padding: 0 14px;
+  font-family: var(--font-title);
+  font-size: 18px;
+  color: #111;
+  outline: none;
+}
+
+.category-select:focus {
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.category-select-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.no-product-messege {
+  display: none;
+}
+
+.footer-subscribe {
+  margin-top: 14px;
+}
+
+.footer-col .footer-text + .footer-text {
+  margin-top: 10px;
+}
+
+#logoutBtn {
+  display: none;
+}
+
+#headerWishlistBadge {
+  display: none;
+}

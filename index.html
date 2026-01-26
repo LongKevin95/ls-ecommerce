@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>L&S E-commerce</title>
+
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- <link rel="stylesheet" href="css/pages/login.css" /> -->
+    <!-- <link rel="stylesheet" href="css/pages/signup.c ss" /> -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- JS -->
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <span>Free Shipping On All Orders Over ₫50</span>
+      </div>
+      <div class="topbar-links">
+        <a href="#">Eng</a>
+        <a href="#">Faqs</a>
+        <a id="loginLink" href="./pages/login.html">Sign In</a>
+        <a id="signupLink" href="./pages/sign-up.html">Sign Up</a>
+        <a href="#">Need Help</a>
+        <a id="logoutBtn" href="#" style="display: none">Logout</a>
+      </div>
+    </div>
+    <header>
+      <div class="site-header o-container">
+        <div class="header-left">
+          <button
+            id="mobileMenuBtn"
+            class="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenuPanel"
+          >
+            <img src="./assets/icons/burger-menu-icon.svg" alt="" />
+          </button>
+
+          <div class="header-logo">
+            <a class="header-logo__link" href="./index.html" aria-label="Home">
+              <img src="./assets/images/logo.png" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="header-wrapper">
+          <!-- Logo -->
+
+          <!-- Search -->
+          <div class="header-top">
+            <form id="headerSearchForm" class="header-search">
+              <input
+                id="headerSearchInput"
+                type="text"
+                placeholder="Search here..."
+              />
+              <button type="submit" class="header-search__btn">
+                <img src="./assets/icons/search-icon.svg" />
+              </button>
+              <div
+                id="headerSearchSuggestions"
+                class="header-search__suggestions"
+                hidden
+              ></div>
+            </form>
+
+            <!-- Actions -->
+
+            <div class="header-actions">
+              <!-- Cart -->
+              <a
+                class="header-action mobile-search-btn"
+                href="./pages/search.html"
+                aria-label="Search"
+              >
+                <img src="./assets/icons/search-icon.svg" alt="" />
+              </a>
+
+              <a
+                id="headerCartBtn"
+                href="./pages/cart.html"
+                class="header-action header-action--cart"
+              >
+                <img src="./assets/icons/cart-icon.svg" />
+                <span class="header-action__label">Cart </span>
+                <span id="headerCartBadge" class="header-action__badge">0</span>
+              </a>
+
+              <!-- Wishlist -->
+
+              <a
+                id="headerWishlistBtn"
+                href="./pages/wishlist.html"
+                class="header-action header-action--wishlist"
+                aria-label="Wishlist"
+              >
+                <img src="./assets/icons/heart-icon.svg" />
+                <span
+                  id="headerWishlistBadge"
+                  class="header-action__badge header-action__badge--wishlist"
+                  style="display: none"
+                  >0</span
+                >
+              </a>
+
+              <!-- User -->
+
+              <div class="header-user" id="headerUser">
+                <button
+                  class="header-action header-action--user"
+                  id="userIcon"
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <img id="userIconImg" src="./assets/icons/user-icon.svg" />
+                </button>
+
+                <div class="user-menu" id="userMenu" hidden>
+                  <div class="user-menu__head">
+                    <img
+                      class="user-menu__avatar"
+                      id="userMenuAvatar"
+                      src="https://i.pravatar.cc/80?img=32"
+                      alt="User avatar"
+                    />
+
+                    <div class="user-menu__meta">
+                      <div class="user-menu__name" id="userMenuName">
+                        Your name
+                      </div>
+                      <div class="user-menu__email" id="userMenuEmail">
+                        yourname@gmail.com
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="user-menu__divider"></div>
+
+                  <button class="user-menu__item" type="button" id="menuSignIn">
+                    <span class="user-menu__icon">↪</span>
+                    <span class="user-menu__text">Sign in</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuAdminDashboard"
+                    hidden
+                  >
+                    <span class="user-menu__icon">🛠️</span>
+                    <span class="user-menu__text">Admin Dashboard</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuMyProfile"
+                  >
+                    <span class="user-menu__icon">👤</span>
+                    <span class="user-menu__text">My Profile</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuSettings"
+                  >
+                    <span class="user-menu__icon">⚙</span>
+                    <span class="user-menu__text">Settings</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <div
+                    class="user-menu__item user-menu__item--has-sub"
+                    id="menuNotification"
+                  >
+                    <div class="user-menu__row">
+                      <span class="user-menu__icon">🔔</span>
+                      <span class="user-menu__text">Notification</span>
+                      <span class="user-menu__chev">›</span>
+                    </div>
+
+                    <div class="user-menu__sub" id="notificationSubmenu">
+                      <button type="button" class="user-menu__subitem">
+                        Allow
+                      </button>
+                      <button type="button" class="user-menu__subitem">
+                        Mute
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="user-menu__item" type="button" id="menuLogout">
+                    <span class="user-menu__icon">↩</span>
+                    <span class="user-menu__text">Log Out</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- NAVIGATION -->
+
+          <nav class="header-nav">
+            <ul class="header-nav__list">
+              <li><a href="./index.html">Home</a></li>
+
+              <li class="header-nav__item header-nav__item--categories">
+                <button
+                  id="categoriesBtn"
+                  class="header-nav__link header-nav__categories-btn"
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Categories
+                </button>
+
+                <div
+                  id="categoriesDropdown"
+                  class="header-nav__dropdown"
+                  hidden
+                >
+                  <ul id="menu" class="menu-list">
+                    <li data-category="" class="menu-list-item is-active">
+                      All
+                    </li>
+                    <li data-category="Fashion Women" class="menu-list-item">
+                      Woman’s Fashion
+                    </li>
+                    <li data-category="Fashion Men" class="menu-list-item">
+                      Men’s Fashion
+                    </li>
+                    <li data-category="Electronics" class="menu-list-item">
+                      Electronics
+                    </li>
+                    <li data-category="Home" class="menu-list-item">
+                      Home & Lifestyle
+                    </li>
+                    <li data-category="Beauty" class="menu-list-item">
+                      Health & Beauty
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a id="navShop" href="#">Shop</a></li>
+
+              <li>
+                <a id="navSupport" href="./pages/support.html">Support</a>
+              </li>
+
+              <li><a href="#">About</a></li>
+            </ul>
+
+            <div class="header-contact">
+              Contact: <strong>(123.456.7894)</strong>
+            </div>
+          </nav>
+        </div>
+
+        <div id="mobileMenuOverlay" class="mobile-menu__overlay" hidden></div>
+        <aside id="mobileMenuPanel" class="mobile-menu" hidden>
+          <div class="mobile-menu__header">
+            <div class="mobile-menu__title">Categories</div>
+            <button
+              id="mobileMenuCloseBtn"
+              class="mobile-menu__close"
+              type="button"
+              aria-label="Close menu"
+            >
+              ×
+            </button>
+          </div>
+
+          <ul id="mobileMenu" class="menu-list">
+            <li data-category="" class="menu-list-item is-active">All</li>
+            <li data-category="Fashion Women" class="menu-list-item">
+              Woman’s Fashion
+            </li>
+            <li data-category="Fashion Men" class="menu-list-item">
+              Men’s Fashion
+            </li>
+            <li data-category="Electronics" class="menu-list-item">
+              Electronics
+            </li>
+            <li data-category="Home" class="menu-list-item">
+              Home & Lifestyle
+            </li>
+            <li data-category="Beauty" class="menu-list-item">
+              Health & Beauty
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <div class="hero o-container">
+      <!-- SLIDER -->
+      <div class="hero-slider">
+        <div class="slider">
+          <div class="slider-track">
+            <div class="slider-item">
+              <img src="./assets/images/carousel-img1.jpg" />
+            </div>
+            <div class="slider-item">
+              <img src="./assets/images/carousel-img1.jpg" />
+            </div>
+            <div class="slider-item">
+              <img src="./assets/images/carousel-img1.jpg" />
+            </div>
+          </div>
+
+          <div class="slider-dots">
+            <span class="dot is-active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FLASH SALE ================= -->
+    <section class="flash" id="flashSection">
+      <div class="o-container">
+        <!-- Header -->
+        <div class="flash-header">
+          <div class="flash-badge section-badge"><span></span> Today's</div>
+          <h2 class="flash-title">Flash Sales</h2>
+
+          <div class="countdown">
+            <span id="days">03</span> : <span id="hours">23</span> :
+            <span id="minutes">59</span> :
+            <span id="seconds">59</span>
+          </div>
+
+          <div class="flash-arrows">
+            <button class="flash-arrow flash-arrow--left">←</button>
+            <button class="flash-arrow flash-arrow--right">→</button>
+          </div>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="flash-slider">
+          <div class="flash-track o-grid-products"></div>
+        </div>
+      </div>
+
+      <div class="o-flex-center mt-50">
+        <a href="./pages/category.html" class="btn">View All Products</a>
+      </div>
+    </section>
+
+    <!-- ======= BEST SELLING PRODUCTS ============= -->
+    <section class="best-selling" id="bestSellingSection">
+      <div class="o-container">
+        <div class="o-section-header">
+          <div class="best-selling__badge"><span></span> This Month</div>
+          <h2 class="best-selling__title">Best Selling Products</h2>
+          <a class="btn best-selling__view-all" href="./pages/category.html"
+            >View All</a
+          >
+        </div>
+        <!-- products -->
+        <div class="best-selling__products">
+          <div
+            class="best-selling__track o-grid-products"
+            id="bestSellingTrack"
+          ></div>
+        </div>
+        <a
+          class="btn best-selling__view-all-mobile"
+          href="./pages/category.html"
+          >View All</a
+        >
+        <img
+          class="banner-img mt-100"
+          src="./assets/images/img-3.jpg "
+          alt="speaker-img"
+        />
+      </div>
+    </section>
+
+    <section class="our-products" id="ourProductsSection">
+      <div class="o-container">
+        <div class="o-section-header">
+          <div class="section-badge"><span></span> Our Products</div>
+          <h2 class="our-products__title">Explore Our Products</h2>
+
+          <div class="flash-arrows our-products__arrows">
+            <button type="button" class="flash-arrow">←</button>
+            <button type="button" class="flash-arrow">→</button>
+          </div>
+        </div>
+
+        <div class="our-products__products">
+          <div class="our-products__track o-grid-products">
+            <div class="product">
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-1.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">Breed Dry Dog Food</h3>
+              <div class="product-price">
+                <span class="price-new">₫100</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(35)</span></div>
+            </div>
+
+            <div class="product">
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-2.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">CANON EOS DSLR Camera</h3>
+              <div class="product-price">
+                <span class="price-new">₫360</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(95)</span></div>
+            </div>
+
+            <div class="product">
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-3.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">ASUS FHD Gaming Laptop</h3>
+              <div class="product-price">
+                <span class="price-new">₫700</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(325)</span></div>
+            </div>
+
+            <div class="product">
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-4.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">Curology Product Set</h3>
+              <div class="product-price">
+                <span class="price-new">₫500</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(145)</span></div>
+            </div>
+
+            <div class="product">
+              <span class="product-badge product-badge--new">NEW</span>
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-5.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">Kids Electric Car</h3>
+              <div class="product-price">
+                <span class="price-new">₫960</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(65)</span></div>
+              <div class="product-colors">
+                <span
+                  class="product-color product-color--red"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="product-color product-color--black"
+                  aria-hidden="true"
+                ></span>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-6.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">Jr. Zoom Soccer Cleats</h3>
+              <div class="product-price">
+                <span class="price-new">₫1160</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(35)</span></div>
+              <div class="product-colors">
+                <span
+                  class="product-color product-color--yellow"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="product-color product-color--red"
+                  aria-hidden="true"
+                ></span>
+              </div>
+            </div>
+
+            <div class="product">
+              <span class="product-badge product-badge--new">NEW</span>
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-7.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">GP11 Shooter USB Gamepad</h3>
+              <div class="product-price">
+                <span class="price-new">₫660</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(55)</span></div>
+              <div class="product-colors">
+                <span
+                  class="product-color product-color--black"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="product-color product-color--red"
+                  aria-hidden="true"
+                ></span>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="product-actions">
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Wishlist"
+                >
+                  ♡
+                </button>
+                <button
+                  class="product-action-btn"
+                  type="button"
+                  aria-label="Quick view"
+                >
+                  👁
+                </button>
+              </div>
+              <div class="product-img-wrap">
+                <img
+                  src="./assets/images/product-8.jpg"
+                  class="product-img"
+                  alt=""
+                />
+                <button class="product-cart" type="button">Add To Cart</button>
+              </div>
+              <h3 class="product-name">Quilted Satin Jacket</h3>
+              <div class="product-price">
+                <span class="price-new">₫660</span>
+              </div>
+              <div class="product-rating">⭐⭐⭐⭐⭐ <span>(55)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="o-flex-center mt-50">
+        <button class="btn">View All Products</button>
+      </div>
+    </section>
+
+    <section class="featured" id="featuredSection">
+      <div class="o-container">
+        <div class="section-badge"><span></span> Featured</div>
+        <h2 class="featured__title">New Arrival</h2>
+
+        <div class="featured-grid">
+          <a class="featured-card featured-card--large" href="#">
+            <img
+              class="featured-card__img"
+              src="./assets/images/featured-product1.jpg"
+              alt=""
+            />
+            <div class="featured-card__content">
+              <h3 class="featured-card__name">PlayStation 5</h3>
+              <p class="featured-card__desc">
+                Black and White version of the PS5 coming out on sale.
+              </p>
+              <span class="featured-card__link">Shop Now</span>
+            </div>
+          </a>
+
+          <div class="featured-grid__right">
+            <a class="featured-card featured-card--wide" href="#">
+              <img
+                class="featured-card__img"
+                src="./assets/images/featured-product2.jpg"
+                alt=""
+              />
+              <div class="featured-card__content">
+                <h3 class="featured-card__name">Women's Collections</h3>
+                <p class="featured-card__desc">
+                  Featured woman collections that give you another vibe.
+                </p>
+                <span class="featured-card__link">Shop Now</span>
+              </div>
+            </a>
+
+            <div class="featured-grid__bottom">
+              <a class="featured-card" href="#">
+                <img
+                  class="featured-card__img"
+                  src="./assets/images/featured-product3.jpg"
+                  alt=""
+                />
+                <div class="featured-card__content">
+                  <h3 class="featured-card__name">Speakers</h3>
+                  <p class="featured-card__desc">Amazon wireless speakers</p>
+                  <span class="featured-card__link">Shop Now</span>
+                </div>
+              </a>
+
+              <a class="featured-card" href="#">
+                <img
+                  class="featured-card__img"
+                  src="./assets/images/featured-product4.jpg"
+                  alt=""
+                />
+                <div class="featured-card__content">
+                  <h3 class="featured-card__name">Perfume</h3>
+                  <p class="featured-card__desc">GUCCI INTENSE OUD EDP</p>
+                  <span class="featured-card__link">Shop Now</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicesSection">
+      <div class="o-container">
+        <div class="services__grid">
+          <div class="service-item">
+            <div class="service-icon">
+              <img src="./assets/icons/featured-icon1.png" />
+            </div>
+            <h3 class="service-title">FREE AND FAST DELIVERY</h3>
+            <p class="service-desc">Free delivery for all orders over ₫140</p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <img src="./assets/icons/featured-icon2.png" />
+            </div>
+            <h3 class="service-title">24/7 CUSTOMER SERVICE</h3>
+            <p class="service-desc">Friendly 24/7 customer support</p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <img src="./assets/icons/featured-icon3.png" />
+            </div>
+            <h3 class="service-title">MONEY BACK GUARANTEE</h3>
+            <p class="service-desc">We return money within 30 days</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button
+      id="backToTop"
+      class="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      ↑
+    </button>
+
+    <section id="searchResultsSection" hidden>
+      <div class="o-container">
+        <h2 id="searchResultsTitle"></h2>
+        <div id="searchResultsTrack"></div>
+      </div>
+    </section>
+    <div class="site-footer">
+      <div class="o-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-col__title">Exclusive</div>
+            <div class="footer-col__subtitle">Subscribe</div>
+            <div class="footer-text">Get 10% off your first order</div>
+
+            <div class="footer-subscribe" style="margin-top: 14px">
+              <div class="footer-subscribe__field">
+                <input type="email" placeholder="Enter your email" />
+                <button type="button" aria-label="Send">➤</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Support</div>
+            <div class="footer-text">
+              111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              exclusive@gmail.com
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              +88015-88888-9999
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Account</div>
+            <ul class="footer-list">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Login / Register</a></li>
+              <li><a href="#">Cart</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Quick Link</div>
+            <ul class="footer-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Download App</div>
+            <div class="footer-text">Save ₫3 with App New User Only</div>
+
+            <div class="footer-download">
+              <div class="footer-download__row">
+                <img class="footer-qr" src="./assets/images/QR-code.jpg" />
+                <div class="store-badges">
+                  <div class="store-badge">
+                    <img
+                      src="./assets/icons/gg-play-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                  <div class="store-badge">
+                    <img
+                      src="./assets/icons/app-store-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-social" aria-label="Social links">
+                <a href="#" aria-label="Facebook">
+                  <img src="./assets/icons/Icon-Facebook.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <img src="./assets/icons/Icon-Twitter.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <img src="./assets/icons/icon-instagram.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <img src="./assets/icons/Icon-Linkedin.png" alt="icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © Copyright Rimel 2022. All right reserved
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script defer src="./js/header.js"></script>
+  <script defer src="./js/script.js"></script>
+</html>

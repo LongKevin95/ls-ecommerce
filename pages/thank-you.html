@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/thank-you.css" />
+  </head>
+
+  <body>
+    <main class="thank-page">
+      <div class="o-container">
+        <div class="thank-card">
+          <h1 class="thank-title"><span>✅</span> Success buy</h1>
+          <p class="thank-sub">Thanks for buying!</p>
+
+          <div class="thank-meta" id="orderMeta"></div>
+
+          <div class="thank-list" id="orderItems"></div>
+          <div class="thank-total" id="orderTotal"></div>
+
+          <div class="thank-actions">
+            <a class="thank-btn thank-btn--cart" href="cart.html"
+              >🛒 Quay lại giỏ hàng</a
+            >
+            <a class="thank-btn thank-btn--home" href="../index.html"
+              >🏠 Back to Home</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function formatMoney(n) {
+        const num = Number(n) || 0;
+        const rounded = Math.round(num);
+        return `₫${new Intl.NumberFormat("vi-VN").format(rounded)}`;
+      }
+
+      const order = JSON.parse(localStorage.getItem("lastOrder"));
+
+      if (!order || !order.items) {
+        
+        window.location.href = "../index.html";
+      }
+
+      document.getElementById("orderMeta").textContent =
+        `Mã đơn: #${order.id} • Thời gian: ${order.date}`;
+
+      const listEl = document.getElementById("orderItems");
+      listEl.innerHTML = order.items
+        .map((item) => {
+          const qty = Number(item.qty) || 1;
+          const price = Number(item.price) || 0;
+          return `
+            <div class="thank-item">
+              <div>
+                <div class="thank-item__name">${item.name}</div>
+                <div class="thank-item__sub">Số lượng: x${qty}</div>
+              </div>
+              <div>${formatMoney(price * qty)}</div>
+            </div>
+          `;
+        })
+        .join("");
+
+      document.getElementById("orderTotal").textContent =
+        "Tổng thanh toán: " + formatMoney(order.total);
+    </script>
+  </body>
+</html>

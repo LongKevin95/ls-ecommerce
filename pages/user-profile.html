@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/user-profile.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <span>Free Shipping On All Orders Over ₫50</span>
+      </div>
+      <div class="topbar-links">
+        <a href="#">Eng</a>
+        <a href="#">Faqs</a>
+        <a id="loginLink" href="./login.html">Sign In</a>
+        <a id="signupLink" href="./sign-up.html">Sign Up</a>
+        <a href="#">Need Help</a>
+        <a id="logoutBtn" href="#" style="display: none">Logout</a>
+      </div>
+    </div>
+    <header>
+      <div class="site-header o-container">
+        <div class="header-left">
+          <button
+            id="mobileMenuBtn"
+            class="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenuPanel"
+          >
+            <img src="../assets/icons/burger-menu-icon.svg" alt="" />
+          </button>
+
+          <div class="header-logo">
+            <a class="header-logo__link" href="../index.html" aria-label="Home">
+              <img src="../assets/images/logo.png" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="header-wrapper">
+          <div class="header-top">
+            <form id="headerSearchForm" class="header-search">
+              <input
+                id="headerSearchInput"
+                type="text"
+                placeholder="Search here..."
+              />
+              <button type="submit" class="header-search__btn">
+                <img src="../assets/icons/search-icon.svg" />
+              </button>
+              <div
+                id="headerSearchSuggestions"
+                class="header-search__suggestions"
+                hidden
+              ></div>
+            </form>
+
+            <div class="header-actions">
+              <a
+                class="header-action mobile-search-btn"
+                href="./search.html"
+                aria-label="Search"
+              >
+                <img src="../assets/icons/search-icon.svg" alt="" />
+              </a>
+
+              <a
+                id="headerCartBtn"
+                href="./cart.html"
+                class="header-action header-action--cart"
+              >
+                <img src="../assets/icons/cart-icon.svg" />
+                <span class="header-action__label">Cart </span>
+                <span id="headerCartBadge" class="header-action__badge">0</span>
+              </a>
+
+              <a
+                id="headerWishlistBtn"
+                href="./wishlist.html"
+                class="header-action header-action--wishlist"
+                aria-label="Wishlist"
+              >
+                <img src="../assets/icons/heart-icon.svg" />
+                <span
+                  id="headerWishlistBadge"
+                  class="header-action__badge header-action__badge--wishlist"
+                  style="display: none"
+                  >0</span
+                >
+              </a>
+
+              <div class="header-user" id="headerUser">
+                <button
+                  class="header-action header-action--user"
+                  id="userIcon"
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <img id="userIconImg" src="../assets/icons/user-icon.svg" />
+                </button>
+
+                <div class="user-menu" id="userMenu" hidden>
+                  <div class="user-menu__head">
+                    <img
+                      class="user-menu__avatar"
+                      id="userMenuAvatar"
+                      src="https://i.pravatar.cc/80?img=32"
+                      alt="User avatar"
+                    />
+
+                    <div class="user-menu__meta">
+                      <div class="user-menu__name" id="userMenuName">
+                        Your name
+                      </div>
+                      <div class="user-menu__email" id="userMenuEmail">
+                        yourname@gmail.com
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="user-menu__divider"></div>
+
+                  <button class="user-menu__item" type="button" id="menuSignIn">
+                    <span class="user-menu__icon">↪</span>
+                    <span class="user-menu__text">Sign in</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuAdminDashboard"
+                    hidden
+                  >
+                    <span class="user-menu__icon">🛠️</span>
+                    <span class="user-menu__text">Admin Dashboard</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuMyProfile"
+                  >
+                    <span class="user-menu__icon">👤</span>
+                    <span class="user-menu__text">My Profile</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuSettings"
+                  >
+                    <span class="user-menu__icon">⚙</span>
+                    <span class="user-menu__text">Settings</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <div
+                    class="user-menu__item user-menu__item--has-sub"
+                    id="menuNotification"
+                  >
+                    <div class="user-menu__row">
+                      <span class="user-menu__icon">🔔</span>
+                      <span class="user-menu__text">Notification</span>
+                      <span class="user-menu__chev">›</span>
+                    </div>
+
+                    <div class="user-menu__sub" id="notificationSubmenu">
+                      <button type="button" class="user-menu__subitem">
+                        Allow
+                      </button>
+                      <button type="button" class="user-menu__subitem">
+                        Mute
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="user-menu__item" type="button" id="menuLogout">
+                    <span class="user-menu__icon">↩</span>
+                    <span class="user-menu__text">Log Out</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav class="header-nav">
+            <ul class="header-nav__list">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="./cart.html">Cart</a></li>
+              <li><a href="./wishlist.html">Wishlist</a></li>
+              <li><a id="navSupport" href="./support.html">Support</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="profile-page">
+      <div class="o-container">
+        <div class="profile-card">
+          <div class="profile-card__header">
+            <div class="profile-top">
+              <div class="profile-user">
+                <div class="profile-avatar">
+                  <img id="avatarPreview" alt="avatar" />
+                </div>
+                <div>
+                  <div id="displayName" class="profile-user__name">User</div>
+                  <div id="displayEmail" class="profile-user__role">email</div>
+                </div>
+              </div>
+
+              <div class="profile-actions">
+                <a
+                  class="btn profile-btn profile-btn--home"
+                  href="../index.html"
+                  >🏠 Back to Home</a
+                >
+                <label
+                  class="btn profile-btn profile-btn--upload"
+                  for="avatarFile"
+                >
+                  Upload New Photo
+                  <input
+                    id="avatarFile"
+                    type="file"
+                    accept="image/*"
+                    style="display: none"
+                  />
+                </label>
+                <button class="btn profile-btn profile-btn--save" id="btnSave">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-divider profile-divider--spaced"></div>
+
+          <div class="profile-form">
+            <div class="profile-grid profile-grid--2">
+              <div class="profile-field">
+                <label class="profile-label">First Name</label>
+                <input
+                  class="profile-input"
+                  id="firstName"
+                  placeholder="eg. Son"
+                />
+              </div>
+              <div class="profile-field">
+                <label class="profile-label">Last Name</label>
+                <input
+                  class="profile-input"
+                  id="lastName"
+                  placeholder="eg. Deptrai"
+                />
+              </div>
+
+              <div class="profile-field profile-field--full">
+                <label class="profile-label">User Name</label>
+                <input
+                  class="profile-input"
+                  id="username"
+                  placeholder="eg. sondep***"
+                />
+              </div>
+
+              <div class="profile-field">
+                <label class="profile-label">Email</label>
+                <input class="profile-input" id="email" disabled />
+              </div>
+
+              <div class="profile-field">
+                <label class="profile-label">Phone Number</label>
+                <input
+                  class="profile-input"
+                  id="phone"
+                  placeholder="eg. 09xxxxxxxx"
+                />
+              </div>
+            </div>
+          </div>
+
+          <p class="note">Thông tin được lưu vào localStorage (demo).</p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const USERS_KEY = "users";
+      const CURRENT_USER_KEY = "user";
+
+      function getUsers() {
+        return JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+      }
+      function saveUsers(users) {
+        localStorage.setItem(USERS_KEY, JSON.stringify(users));
+      }
+      function getCurrentUser() {
+        return JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+      }
+      function saveCurrentUser(u) {
+        localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(u));
+      }
+
+      function ensureProfile(u) {
+        if (!u.profile) u.profile = {};
+        u.profile.firstName ??= "";
+        u.profile.lastName ??= "";
+        u.profile.username ??= u.name || "";
+        u.profile.phone ??= "";
+        u.profile.avatar ??= "https://i.pravatar.cc/120?img=32";
+        return u;
+      }
+
+      const u = getCurrentUser();
+      if (!u) {
+        alert("Bạn cần đăng nhập!");
+        window.location.href = "login.html";
+      }
+
+      let current = ensureProfile(u);
+
+      const avatarPreview = document.getElementById("avatarPreview");
+      const displayName = document.getElementById("displayName");
+      const displayEmail = document.getElementById("displayEmail");
+
+      function render() {
+        avatarPreview.src = current.profile.avatar;
+        displayName.textContent =
+          (current.profile.firstName || current.name || "User") +
+          " " +
+          (current.profile.lastName || "");
+        displayEmail.textContent = current.email || "";
+
+        document.getElementById("firstName").value =
+          current.profile.firstName || "";
+        document.getElementById("lastName").value =
+          current.profile.lastName || "";
+        document.getElementById("username").value =
+          current.profile.username || "";
+        document.getElementById("phone").value = current.profile.phone || "";
+        document.getElementById("email").value = current.email || "";
+      }
+
+      // upload avatar -> base64
+      document
+        .getElementById("avatarFile")
+        .addEventListener("change", function () {
+          const file = this.files?.[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = () => {
+            current.profile.avatar = reader.result;
+            avatarPreview.src = current.profile.avatar;
+          };
+          reader.readAsDataURL(file);
+        });
+
+      document.getElementById("btnSave").addEventListener("click", () => {
+        current.profile.firstName = document
+          .getElementById("firstName")
+          .value.trim();
+        current.profile.lastName = document
+          .getElementById("lastName")
+          .value.trim();
+        current.profile.username = document
+          .getElementById("username")
+          .value.trim();
+        current.profile.phone = document.getElementById("phone").value.trim();
+
+        const fullName =
+          `${current.profile.firstName} ${current.profile.lastName}`.trim();
+        current.name = fullName || current.profile.username || current.name;
+        current.username = current.profile.username || current.username;
+
+        
+        const users = getUsers();
+        const idx = users.findIndex((x) => x.id === current.id);
+        if (idx !== -1) users[idx] = current;
+        saveUsers(users);
+
+        
+        saveCurrentUser(current);
+
+        render();
+        alert("Cập nhật thông tin thành công ✅");
+      });
+
+      render();
+    </script>
+
+    <!-- ================= FOOTER ================= -->
+    <div class="site-footer">
+      <div class="o-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-col__title">Exclusive</div>
+            <div class="footer-col__subtitle">Subscribe</div>
+            <div class="footer-text">Get 10% off your first order</div>
+
+            <div class="footer-subscribe" style="margin-top: 14px">
+              <div class="footer-subscribe__field">
+                <input type="email" placeholder="Enter your email" />
+                <button type="button" aria-label="Send">➤</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Support</div>
+            <div class="footer-text">
+              111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              exclusive@gmail.com
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              +88015-88888-9999
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Account</div>
+            <ul class="footer-list">
+              <li><a href="./user-profile.html">My Account</a></li>
+              <li><a href="./login.html">Login / Register</a></li>
+              <li><a href="./cart.html">Cart</a></li>
+              <li><a href="./wishlist.html">Wishlist</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Quick Link</div>
+            <ul class="footer-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Download App</div>
+            <div class="footer-text">Save ₫3 with App New User Only</div>
+
+            <div class="footer-download">
+              <div class="footer-download__row">
+                <img class="footer-qr" src="../assets/images/QR-code.jpg" />
+                <div class="store-badges">
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/gg-play-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/app-store-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-social" aria-label="Social links">
+                <a href="#" aria-label="Facebook">
+                  <img src="../assets/icons/Icon-Facebook.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <img src="../assets/icons/Icon-Twitter.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <img src="../assets/icons/icon-instagram.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <img src="../assets/icons/Icon-Linkedin.png" alt="icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © Copyright Rimel 2022. All right reserved
+        </div>
+      </div>
+    </div>
+
+    <script defer src="../js/header.js"></script>
+  </body>
+</html>

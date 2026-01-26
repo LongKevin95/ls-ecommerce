@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/login.css" />
+  </head>
+
+  <body>
+    <div class="signin-container">
+      <form class="signin" id="loginForm">
+        <h2 class="signin-title">Sign In</h2>
+
+        <!-- Email -->
+        <div class="signin-group">
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            class="signin-input"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="signin-group signin-group--icon">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            class="signin-input"
+            required
+          />
+          <span class="signin-eye" id="togglePassword">👁</span>
+        </div>
+
+        <!-- Remember -->
+        <div class="signin-options">
+          <label class="signin-remember">
+            <input type="checkbox" />
+            Remember Me
+          </label>
+          <a href="#" class="signin-forgot">Forget Password</a>
+        </div>
+
+        <!-- Button -->
+        <button type="submit" class="signin-btn">Sign In →</button>
+      </form>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/pages/login.js"></script>
+  </body>
+</html>

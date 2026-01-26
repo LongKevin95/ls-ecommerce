@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/checkout.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <span>Free Shipping On All Orders Over ₫50</span>
+      </div>
+      <div class="topbar-links">
+        <a href="#">Eng</a>
+        <a href="#">Faqs</a>
+        <a id="loginLink" href="./login.html">Sign In</a>
+        <a id="signupLink" href="./sign-up.html">Sign Up</a>
+        <a href="#">Need Help</a>
+        <a id="logoutBtn" href="#" style="display: none">Logout</a>
+      </div>
+    </div>
+    <header>
+      <div class="site-header o-container">
+        <div class="header-left">
+          <button
+            id="mobileMenuBtn"
+            class="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenuPanel"
+          >
+            <img src="../assets/icons/burger-menu-icon.svg" alt="" />
+          </button>
+
+          <div class="header-logo">
+            <a class="header-logo__link" href="../index.html" aria-label="Home">
+              <img src="../assets/images/logo.png" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="header-wrapper">
+          <div class="header-top">
+            <form id="headerSearchForm" class="header-search">
+              <input
+                id="headerSearchInput"
+                type="text"
+                placeholder="Search here..."
+              />
+              <button type="submit" class="header-search__btn">
+                <img src="../assets/icons/search-icon.svg" />
+              </button>
+              <div
+                id="headerSearchSuggestions"
+                class="header-search__suggestions"
+                hidden
+              ></div>
+            </form>
+
+            <div class="header-actions">
+              <a
+                class="header-action mobile-search-btn"
+                href="./search.html"
+                aria-label="Search"
+              >
+                <img src="../assets/icons/search-icon.svg" alt="" />
+              </a>
+
+              <a
+                id="headerCartBtn"
+                href="./cart.html"
+                class="header-action header-action--cart"
+              >
+                <img src="../assets/icons/cart-icon.svg" />
+                <span class="header-action__label">Cart </span>
+                <span id="headerCartBadge" class="header-action__badge">0</span>
+              </a>
+
+              <a
+                id="headerWishlistBtn"
+                href="./wishlist.html"
+                class="header-action header-action--wishlist"
+                aria-label="Wishlist"
+              >
+                <img src="../assets/icons/heart-icon.svg" />
+                <span
+                  id="headerWishlistBadge"
+                  class="header-action__badge header-action__badge--wishlist"
+                  style="display: none"
+                  >0</span
+                >
+              </a>
+
+              <div class="header-user" id="headerUser">
+                <button
+                  class="header-action header-action--user"
+                  id="userIcon"
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <img id="userIconImg" src="../assets/icons/user-icon.svg" />
+                </button>
+
+                <div class="user-menu" id="userMenu" hidden>
+                  <div class="user-menu__head">
+                    <img
+                      class="user-menu__avatar"
+                      id="userMenuAvatar"
+                      src="https://i.pravatar.cc/80?img=32"
+                      alt="User avatar"
+                    />
+
+                    <div class="user-menu__meta">
+                      <div class="user-menu__name" id="userMenuName">
+                        Your name
+                      </div>
+                      <div class="user-menu__email" id="userMenuEmail">
+                        yourname@gmail.com
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="user-menu__divider"></div>
+
+                  <button class="user-menu__item" type="button" id="menuSignIn">
+                    <span class="user-menu__icon">↪</span>
+                    <span class="user-menu__text">Sign in</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuAdminDashboard"
+                    hidden
+                  >
+                    <span class="user-menu__icon">🛠️</span>
+                    <span class="user-menu__text">Admin Dashboard</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuMyProfile"
+                  >
+                    <span class="user-menu__icon">👤</span>
+                    <span class="user-menu__text">My Profile</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuSettings"
+                  >
+                    <span class="user-menu__icon">⚙</span>
+                    <span class="user-menu__text">Settings</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <div
+                    class="user-menu__item user-menu__item--has-sub"
+                    id="menuNotification"
+                  >
+                    <div class="user-menu__row">
+                      <span class="user-menu__icon">🔔</span>
+                      <span class="user-menu__text">Notification</span>
+                      <span class="user-menu__chev">›</span>
+                    </div>
+
+                    <div class="user-menu__sub" id="notificationSubmenu">
+                      <button type="button" class="user-menu__subitem">
+                        Allow
+                      </button>
+                      <button type="button" class="user-menu__subitem">
+                        Mute
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="user-menu__item" type="button" id="menuLogout">
+                    <span class="user-menu__icon">↩</span>
+                    <span class="user-menu__text">Log Out</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav class="header-nav">
+            <ul class="header-nav__list">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="./cart.html">Cart</a></li>
+              <li><a href="./wishlist.html">Wishlist</a></li>
+              <li><a id="navSupport" href="./support.html">Support</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="checkout-page">
+      <div class="o-container">
+        <div class="breadcrumb">
+          <a href="../index.html">Account</a> &gt;
+          <a href="#">My Account</a> &gt; <a href="#">Product</a> &gt;
+          <a href="./cart.html">View Cart</a> &gt;
+          <strong>Checkout</strong>
+        </div>
+
+        <div class="checkout-layout">
+          <section class="checkout-billing">
+            <h1 class="checkout-title">Billing Details</h1>
+
+            <form
+              class="checkout-form"
+              id="checkoutForm"
+              action="#"
+              method="post"
+            >
+              <div class="checkout-field">
+                <label for="firstName">
+                  First Name<span class="is-required">*</span>
+                </label>
+                <input id="firstName" name="firstName" type="text" required />
+              </div>
+
+              <div class="checkout-field">
+                <label for="companyName">Company Name</label>
+                <input id="companyName" name="companyName" type="text" />
+              </div>
+
+              <div class="checkout-field">
+                <label for="streetAddress">
+                  Street Address<span class="is-required">*</span>
+                </label>
+                <input
+                  id="streetAddress"
+                  name="streetAddress"
+                  type="text"
+                  required
+                />
+              </div>
+
+              <div class="checkout-field">
+                <label for="apartment">Apartment, floor, etc. (optional)</label>
+                <input id="apartment" name="apartment" type="text" />
+              </div>
+
+              <div class="checkout-field">
+                <label for="townCity">
+                  Town/City<span class="is-required">*</span>
+                </label>
+                <input id="townCity" name="townCity" type="text" required />
+              </div>
+
+              <div class="checkout-field">
+                <label for="phone">
+                  Phone Number<span class="is-required">*</span>
+                </label>
+                <input id="phone" name="phone" type="tel" required />
+              </div>
+
+              <div class="checkout-field">
+                <label for="email">
+                  Email Address<span class="is-required">*</span>
+                </label>
+                <input id="email" name="email" type="email" required />
+              </div>
+
+              <label class="checkout-checkbox">
+                <input type="checkbox" />
+                <span
+                  >Save this information for faster check-out next time</span
+                >
+              </label>
+            </form>
+          </section>
+
+          <aside class="checkout-summary">
+            <div class="summary-products" id="checkoutItems"></div>
+            <div class="summary-empty" id="checkoutEmpty" hidden>
+              <p>Chưa có sản phẩm trong giỏ.</p>
+              <a class="btn summary-empty__btn" href="./cart.html"
+                >Quay lại giỏ hàng</a
+              >
+            </div>
+
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="checkoutSubtotal">₫0</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping:</span>
+              <span>Free</span>
+            </div>
+            <div class="summary-row summary-row--total">
+              <span>Total:</span>
+              <span id="checkoutTotal">₫0</span>
+            </div>
+
+            <div class="summary-payments">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="bank" />
+                <span class="payment-option__label">Bank</span>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="paypal" />
+                <span class="payment-option__label">Paypal</span>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="cod" checked />
+                <span class="payment-option__label">Cash on delivery</span>
+              </label>
+            </div>
+
+            <div class="summary-coupon">
+              <input
+                class="summary-coupon__input"
+                type="text"
+                placeholder="Coupon Code"
+              />
+              <button type="button" class="btn summary-coupon__btn">
+                Apply Coupon
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="btn summary-place-order"
+              id="btnPlaceOrder"
+            >
+              Place Order
+            </button>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- ✅ SCRIPT ĐỂ CUỐI BODY -->
+    <script>
+      // ===== KEYS (đồng bộ toàn project) =====
+      const USERS_KEY = "users";
+      const CURRENT_USER_KEY = "user";
+      const CART_KEY = "cart";
+      const ORDERS_KEY = "orders";
+      const LAST_ORDER_KEY = "lastOrder";
+      const PRODUCTS_KEY = "products";
+
+      // ===== HELPERS =====
+      function safeJson(key, fallback) {
+        try {
+          const raw = localStorage.getItem(key);
+          return raw ? JSON.parse(raw) : fallback;
+        } catch {
+          return fallback;
+        }
+      }
+
+      function setJson(key, value) {
+        localStorage.setItem(key, JSON.stringify(value));
+      }
+
+      function getCart() {
+        return safeJson(CART_KEY, []);
+      }
+
+      function getOrders() {
+        return safeJson(ORDERS_KEY, []);
+      }
+
+      function getProducts() {
+        return safeJson(PRODUCTS_KEY, []);
+      }
+
+      function saveProducts(products) {
+        setJson(PRODUCTS_KEY, products);
+      }
+
+      function getProductStockValue(product) {
+        const raw = Number(product?.stock);
+        return Number.isFinite(raw) ? raw : null;
+      }
+
+      function getCurrentUser() {
+        return safeJson(CURRENT_USER_KEY, null);
+      }
+
+      function formatMoney(n) {
+        const num = Number(n) || 0;
+        const rounded = Math.round(num);
+        return `₫${new Intl.NumberFormat("vi-VN").format(rounded)}`;
+      }
+
+      function calcTotal(cart) {
+        return cart.reduce(
+          (sum, item) =>
+            sum + (Number(item.price) || 0) * (Number(item.qty) || 1),
+          0,
+        );
+      }
+
+      // ===== RENDER CHECKOUT =====
+      function renderCheckout() {
+        const itemsEl = document.getElementById("checkoutItems");
+        const emptyEl = document.getElementById("checkoutEmpty");
+        const subtotalEl = document.getElementById("checkoutSubtotal");
+        const totalEl = document.getElementById("checkoutTotal");
+
+        const cart = getCart();
+
+        if (!cart.length) {
+          itemsEl.innerHTML = "";
+          emptyEl.hidden = false;
+          subtotalEl.textContent = formatMoney(0);
+          totalEl.textContent = formatMoney(0);
+          return;
+        }
+
+        emptyEl.hidden = true;
+
+        itemsEl.innerHTML = cart
+          .map((item) => {
+            const qty = Number(item.qty) || 1;
+            const price = Number(item.price) || 0;
+            const line = price * qty;
+
+            
+            const img =
+              item.img ||
+              item.image ||
+              item.imgUrl ||
+              "../assets/images/item-01.svg";
+
+            return `
+          <div class="summary-item">
+            <div class="summary-item__left">
+              <img class="summary-item__img" src="${img}" alt="${item.name || "Product"}" />
+              <div class="summary-item__meta">
+                <span class="summary-item__name">${item.name || "Unnamed"}</span>
+                <span class="summary-item__qty">x${qty}</span>
+              </div>
+            </div>
+            <span class="summary-item__price">${formatMoney(line)}</span>
+          </div>
+        `;
+          })
+          .join("");
+
+        const total = calcTotal(cart);
+        subtotalEl.textContent = formatMoney(total);
+        totalEl.textContent = formatMoney(total);
+      }
+
+      // ===== PLACE ORDER =====
+      function getUserId(user) {
+        
+        return (
+          user?.id ||
+          user?.username ||
+          user?.email ||
+          user?.profile?.username ||
+          "guest"
+        );
+      }
+
+      document.getElementById("btnPlaceOrder").addEventListener("click", () => {
+        const cart = getCart();
+        if (!cart.length) {
+          alert("Giỏ hàng trống ❌");
+          return;
+        }
+
+        // validate form required
+        const form = document.getElementById("checkoutForm");
+        if (form && !form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const user = getCurrentUser();
+        if (!user) {
+          alert("Bạn cần đăng nhập để đặt hàng!");
+          window.location.href = "./login.html"; 
+          return;
+        }
+
+        const total = calcTotal(cart);
+
+        const products = getProducts();
+        const stockMap = new Map(products.map((p) => [String(p.id), p]));
+
+        for (const item of cart) {
+          const product = stockMap.get(String(item.id));
+          const stockValue = getProductStockValue(product);
+          const qty = Number(item.qty) || 0;
+          if (stockValue !== null && qty > stockValue) {
+            alert(`Sản phẩm "${item.name}" đã hết hàng.`);
+            return;
+          }
+        }
+
+        const order = {
+          id: Date.now(),
+
+          
+          userId: getUserId(user),
+          username: user.username || user.profile?.username || user.name || "",
+          email: user.email || "",
+
+          items: cart,
+          total,
+
+          dateISO: new Date().toISOString(),
+          dateVN: new Date().toLocaleString("vi-VN"),
+          status: "paid",
+        };
+
+        cart.forEach((item) => {
+          const product = stockMap.get(String(item.id));
+          if (!product) return;
+          const stockValue = getProductStockValue(product);
+          if (stockValue === null) return;
+          const qty = Number(item.qty) || 0;
+          product.stock = Math.max(0, stockValue - qty);
+        });
+
+        saveProducts(products);
+
+        
+        const orders = getOrders();
+        orders.push(order);
+        setJson(ORDERS_KEY, orders);
+
+        
+        setJson(LAST_ORDER_KEY, order);
+
+        
+        localStorage.removeItem(CART_KEY);
+
+        
+        window.location.href = "thank-you.html";
+      });
+
+      // init
+      renderCheckout();
+    </script>
+
+    <!-- ================= FOOTER ================= -->
+    <div class="site-footer">
+      <div class="o-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-col__title">Exclusive</div>
+            <div class="footer-col__subtitle">Subscribe</div>
+            <div class="footer-text">Get 10% off your first order</div>
+
+            <div class="footer-subscribe" style="margin-top: 14px">
+              <div class="footer-subscribe__field">
+                <input type="email" placeholder="Enter your email" />
+                <button type="button" aria-label="Send">➤</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Support</div>
+            <div class="footer-text">
+              111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              exclusive@gmail.com
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              +88015-88888-9999
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Account</div>
+            <ul class="footer-list">
+              <li><a href="./user-profile.html">My Account</a></li>
+              <li><a href="./login.html">Login / Register</a></li>
+              <li><a href="./cart.html">Cart</a></li>
+              <li><a href="./wishlist.html">Wishlist</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Quick Link</div>
+            <ul class="footer-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Download App</div>
+            <div class="footer-text">Save ₫3 with App New User Only</div>
+
+            <div class="footer-download">
+              <div class="footer-download__row">
+                <img class="footer-qr" src="../assets/images/QR-code.jpg" />
+                <div class="store-badges">
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/gg-play-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/app-store-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-social" aria-label="Social links">
+                <a href="#" aria-label="Facebook">
+                  <img src="../assets/icons/Icon-Facebook.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <img src="../assets/icons/Icon-Twitter.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <img src="../assets/icons/icon-instagram.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <img src="../assets/icons/Icon-Linkedin.png" alt="icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © Copyright Rimel 2022. All right reserved
+        </div>
+      </div>
+    </div>
+
+    <script defer src="../js/header.js"></script>
+  </body>
+</html>

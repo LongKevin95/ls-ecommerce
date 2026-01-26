@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Search</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/search.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="page-search">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span>Free Shipping On All Orders Over ₫50</span>
+      </div>
+      <div class="topbar-links">
+        <a href="#">Eng</a>
+        <a href="#">Faqs</a>
+        <a id="loginLink" href="login.html">Sign In</a>
+        <a id="signupLink" href="sign-up.html">Sign Up</a>
+        <a href="#">Need Help</a>
+        <a id="logoutBtn" href="#" style="display: none">Logout</a>
+      </div>
+    </div>
+    <header>
+      <div class="site-header o-container">
+        <div class="header-left">
+          <button
+            id="mobileMenuBtn"
+            class="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenuPanel"
+          >
+            <img src="../assets/icons/burger-menu-icon.svg" alt="" />
+          </button>
+
+          <div class="header-logo">
+            <a class="header-logo__link" href="../index.html" aria-label="Home">
+              <img src="../assets/images/logo.png" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="header-wrapper">
+          <!-- Logo -->
+
+          <!-- Search -->
+          <div class="header-top">
+            <form id="headerSearchForm" class="header-search">
+              <input
+                id="headerSearchInput"
+                type="text"
+                placeholder="Search here..."
+              />
+              <button type="submit" class="header-search__btn">
+                <img src="../assets/icons/search-icon.svg" />
+              </button>
+              <div
+                id="headerSearchSuggestions"
+                class="header-search__suggestions"
+                hidden
+              ></div>
+            </form>
+
+            <!-- Actions -->
+
+            <div class="header-actions">
+              <!-- Cart -->
+              <a
+                class="header-action mobile-search-btn"
+                href="search.html"
+                aria-label="Search"
+              >
+                <img src="../assets/icons/search-icon.svg" alt="" />
+              </a>
+
+              <a
+                id="headerCartBtn"
+                href="cart.html"
+                class="header-action header-action--cart"
+              >
+                <img src="../assets/icons/cart-icon.svg" />
+                <span class="header-action__label">Cart </span>
+                <span id="headerCartBadge" class="header-action__badge">0</span>
+              </a>
+
+              <!-- Wishlist -->
+
+              <a
+                id="headerWishlistBtn"
+                href="wishlist.html"
+                class="header-action header-action--wishlist"
+                aria-label="Wishlist"
+              >
+                <img src="../assets/icons/heart-icon.svg" />
+                <span
+                  id="headerWishlistBadge"
+                  class="header-action__badge header-action__badge--wishlist"
+                  style="display: none"
+                  >0</span
+                >
+              </a>
+
+              <!-- User -->
+
+              <div class="header-user" id="headerUser">
+                <button
+                  class="header-action header-action--user"
+                  id="userIcon"
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <img id="userIconImg" src="../assets/icons/user-icon.svg" />
+                </button>
+
+                <div class="user-menu" id="userMenu" hidden>
+                  <div class="user-menu__head">
+                    <img
+                      class="user-menu__avatar"
+                      id="userMenuAvatar"
+                      src="https://i.pravatar.cc/80?img=32"
+                      alt="User avatar"
+                    />
+
+                    <div class="user-menu__meta">
+                      <div class="user-menu__name" id="userMenuName">
+                        Your name
+                      </div>
+                      <div class="user-menu__email" id="userMenuEmail">
+                        yourname@gmail.com
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="user-menu__divider"></div>
+
+                  <button class="user-menu__item" type="button" id="menuSignIn">
+                    <span class="user-menu__icon">↪</span>
+                    <span class="user-menu__text">Sign in</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuAdminDashboard"
+                    hidden
+                  >
+                    <span class="user-menu__icon">🛠️</span>
+                    <span class="user-menu__text">Admin Dashboard</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuMyProfile"
+                  >
+                    <span class="user-menu__icon">👤</span>
+                    <span class="user-menu__text">My Profile</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuSettings"
+                  >
+                    <span class="user-menu__icon">⚙</span>
+                    <span class="user-menu__text">Settings</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <div
+                    class="user-menu__item user-menu__item--has-sub"
+                    id="menuNotification"
+                  >
+                    <div class="user-menu__row">
+                      <span class="user-menu__icon">🔔</span>
+                      <span class="user-menu__text">Notification</span>
+                      <span class="user-menu__chev">›</span>
+                    </div>
+
+                    <div class="user-menu__sub" id="notificationSubmenu">
+                      <button type="button" class="user-menu__subitem">
+                        Allow
+                      </button>
+                      <button type="button" class="user-menu__subitem">
+                        Mute
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="user-menu__item" type="button" id="menuLogout">
+                    <span class="user-menu__icon">↩</span>
+                    <span class="user-menu__text">Log Out</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- NAVIGATION -->
+
+          <nav class="header-nav">
+            <ul class="header-nav__list">
+              <li><a href="../index.html">Home</a></li>
+
+              <li class="header-nav__item header-nav__item--categories">
+                <button
+                  id="categoriesBtn"
+                  class="header-nav__link header-nav__categories-btn"
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Categories
+                </button>
+
+                <div
+                  id="categoriesDropdown"
+                  class="header-nav__dropdown"
+                  hidden
+                >
+                  <ul id="menu" class="menu-list">
+                    <li data-category="" class="menu-list-item is-active">
+                      All
+                    </li>
+                    <li data-category="Fashion Women" class="menu-list-item">
+                      Woman’s Fashion
+                    </li>
+                    <li data-category="Fashion Men" class="menu-list-item">
+                      Men’s Fashion
+                    </li>
+                    <li data-category="Electronics" class="menu-list-item">
+                      Electronics
+                    </li>
+                    <li data-category="Home" class="menu-list-item">
+                      Home & Lifestyle
+                    </li>
+                    <li data-category="Beauty" class="menu-list-item">
+                      Health & Beauty
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a id="navShop" href="#">Shop</a></li>
+
+              <li><a id="navSupport" href="./support.html">Support</a></li>
+
+              <li><a href="#">About</a></li>
+            </ul>
+
+            <div class="header-contact">
+              Contact: <strong>(123.456.7894)</strong>
+            </div>
+          </nav>
+        </div>
+
+        <div id="mobileMenuOverlay" class="mobile-menu__overlay" hidden></div>
+        <aside id="mobileMenuPanel" class="mobile-menu" hidden>
+          <div class="mobile-menu__header">
+            <div class="mobile-menu__title">Categories</div>
+            <button
+              id="mobileMenuCloseBtn"
+              class="mobile-menu__close"
+              type="button"
+              aria-label="Close menu"
+            >
+              ×
+            </button>
+          </div>
+
+          <ul id="mobileMenu" class="menu-list">
+            <li data-category="" class="menu-list-item is-active">All</li>
+            <li data-category="Fashion Women" class="menu-list-item">
+              Woman’s Fashion
+            </li>
+            <li data-category="Fashion Men" class="menu-list-item">
+              Men’s Fashion
+            </li>
+            <li data-category="Electronics" class="menu-list-item">
+              Electronics
+            </li>
+            <li data-category="Home" class="menu-list-item">
+              Home & Lifestyle
+            </li>
+            <li data-category="Beauty" class="menu-list-item">
+              Health & Beauty
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main class="o-container search-page">
+      <div class="search-filter">
+        <div class="search-filter__header">
+          <svg
+            class="search-filter__icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 5h18l-7 8v5l-4 2v-7L3 5z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <div class="search-filter__title">BỘ LỌC TÌM KIẾM</div>
+        </div>
+
+        <form id="searchFilterForm" class="search-filter__form">
+          <div class="search-filter__group">
+            <span class="search-filter__label" for="searchFilterCategory">
+              Danh Mục
+            </span>
+            <select
+              id="searchFilterCategory"
+              class="search-filter__control"
+            ></select>
+          </div>
+
+          <div class="search-filter__group">
+            <span class="search-filter__label">Khoảng Giá</span>
+            <div class="search-filter__price">
+              <input
+                id="searchFilterMinPrice"
+                class="search-filter__control search-filter__price-input"
+                type="number"
+                min="0"
+                placeholder="Từ"
+              />
+              <span class="search-filter__price-sep">—</span>
+              <input
+                id="searchFilterMaxPrice"
+                class="search-filter__control search-filter__price-input"
+                type="number"
+                min="0"
+                placeholder="Đến"
+              />
+            </div>
+          </div>
+
+          <div class="search-filter__group">
+            <span class="search-filter__label" for="searchFilterRating">
+              Đánh Giá
+            </span>
+            <select id="searchFilterRating" class="search-filter__control">
+              <option value="">Tất cả</option>
+              <option value="5">★★★★★</option>
+              <option value="4">★★★★☆ trở lên</option>
+              <option value="3">★★★☆☆ trở lên</option>
+              <option value="2">★★☆☆☆ trở lên</option>
+              <option value="1">★☆☆☆☆ trở lên</option>
+            </select>
+          </div>
+
+          <button class="btn search-filter__btn" type="submit">Lọc</button>
+        </form>
+      </div>
+      <h2 id="searchResultsTitle" class="search-page__title"></h2>
+      <div
+        id="searchResultsTrack"
+        class="search-page__track o-grid-products"
+      ></div>
+    </main>
+
+    <div class="site-footer">
+      <div class="o-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-col__title">Exclusive</div>
+            <div class="footer-col__subtitle">Subscribe</div>
+            <div class="footer-text">Get 10% off your first order</div>
+
+            <div class="footer-subscribe" style="margin-top: 14px">
+              <div class="footer-subscribe__field">
+                <input type="email" placeholder="Enter your email" />
+                <button type="button" aria-label="Send">➤</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Support</div>
+            <div class="footer-text">
+              111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              exclusive@gmail.com
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              +88015-88888-9999
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Account</div>
+            <ul class="footer-list">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Login / Register</a></li>
+              <li><a href="#">Cart</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Quick Link</div>
+            <ul class="footer-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Download App</div>
+            <div class="footer-text">Save ₫3 with App New User Only</div>
+
+            <div class="footer-download">
+              <div class="footer-download__row">
+                <img class="footer-qr" src="../assets/images/QR-code.jpg" />
+                <div class="store-badges">
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/gg-play-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/app-store-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-social" aria-label="Social links">
+                <a href="#" aria-label="Facebook">
+                  <img src="../assets/icons/Icon-Facebook.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <img src="../assets/icons/Icon-Twitter.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <img src="../assets/icons/icon-instagram.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <img src="../assets/icons/Icon-Linkedin.png" alt="icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © Copyright Rimel 2022. All right reserved
+        </div>
+      </div>
+    </div>
+
+    <script defer src="../js/header.js"></script>
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/pages/search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+/* ========== Settings ========== */
+
+:root {
+  --font-primary: "Poppins", serif;
+  --font-secondary: "Plus Jakarta Sans", sans-serif;
+  --font-title: Inter, serif;
+
+  /*----------color---------- */
+  --color-primary: black;
+  --color-bg: #ffffff;
+  --color-text: #191825;
+  --color-btn-bg: #d33;
+  --color-btn-text: #fff;
+  --color-breadcumb: #777;
+
+  /* ----------spacing--------- */
+  --space-unit: 16px;
+  --space-xxs: calc(0.25 * var(--space-unit)); /*  4px */
+  --space-xs: calc(0.5 * var(--space-unit)); /* 8px */
+  --space-sm: calc(0.75 * var(--space-unit)); /* 12px */
+  --space-md: calc(1.25 * var(--space-unit)); /* 20px */
+  --space-lg: calc(2 * var(--space-unit)); /* 32px */
+  --space-lg-plus: calc(2.5 * var(--space-unit)); /* 40px */
+  --space-xl: calc(3.25 * var(--space-unit)); /* 52px */
+  --space-xl-plus: calc(4.5 * var(--space-unit)); /* 72px */
+  --space-xxl: calc(5.25 * var(--space-unit)); /* 84px */
+  --space-3xl: calc(6.25 * var(--space-unit)); /* 100px */
+  --space-4xl: calc(8 * var(--space-unit)); /* 128px */
+  --space-5xl: calc(8.75 * var(--space-unit)); /* 140px */
+
+  
+  /* set base values */
+  --text-base-size: 1em; /* 16px*/
+  --text-scale-ratio: 1.2;
+
+  /* type scale */
+  --text-xs: calc(var(--text-sm) / (var(--text-scale-ratio))); /* ~ 11px*/
+  --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio)); /* ~13px*/
+  --text-md: calc(var(--text-base-size) * var(--text-scale-ratio)); /* ~19px*/
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio)); /* ~ 23px*/
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio)); /* ~ 27px*/
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); /* ~ 33px*/
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); /* ~ 39px*/
+
+  /* ------------- size ----------- */
+  --width-item: 260px;
+  --width-item-sm: 220px;
+  --width-item-xm: 200px;
+  --width-item-xxm: 180px;
+}
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  min-width: 350px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer {
+  margin-top: auto;
+}
+
+section {
+  margin-bottom: var(--space-xl-plus);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+}
+a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.hide {
+  display: none !important;
+}

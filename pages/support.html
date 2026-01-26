@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/support.css" />
+  </head>
+
+  <body>
+    <div class="topbar">
+      <div class="topbar-left">
+        <span>Free Shipping On All Orders Over ₫50</span>
+      </div>
+      <div class="topbar-links">
+        <a href="#">Eng</a>
+        <a href="#">Faqs</a>
+        <a id="loginLink" href="./login.html">Sign In</a>
+        <a id="signupLink" href="./sign-up.html">Sign Up</a>
+        <a href="#">Need Help</a>
+        <a id="logoutBtn" href="#" style="display: none">Logout</a>
+      </div>
+    </div>
+    <header>
+      <div class="site-header o-container">
+        <div class="header-left">
+          <button
+            id="mobileMenuBtn"
+            class="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenuPanel"
+          >
+            <img src="../assets/icons/burger-menu-icon.svg" alt="" />
+          </button>
+
+          <div class="header-logo">
+            <a class="header-logo__link" href="../index.html" aria-label="Home">
+              <img src="../assets/images/logo.png" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="header-wrapper">
+          <div class="header-top">
+            <form id="headerSearchForm" class="header-search">
+              <input
+                id="headerSearchInput"
+                type="text"
+                placeholder="Search here..."
+              />
+              <button type="submit" class="header-search__btn">
+                <img src="../assets/icons/search-icon.svg" />
+              </button>
+              <div
+                id="headerSearchSuggestions"
+                class="header-search__suggestions"
+                hidden
+              ></div>
+            </form>
+
+            <div class="header-actions">
+              <a
+                class="header-action mobile-search-btn"
+                href="./search.html"
+                aria-label="Search"
+              >
+                <img src="../assets/icons/search-icon.svg" alt="" />
+              </a>
+
+              <a
+                id="headerCartBtn"
+                href="./cart.html"
+                class="header-action header-action--cart"
+              >
+                <img src="../assets/icons/cart-icon.svg" />
+                <span class="header-action__label">Cart </span>
+                <span id="headerCartBadge" class="header-action__badge">0</span>
+              </a>
+
+              <a
+                id="headerWishlistBtn"
+                href="./wishlist.html"
+                class="header-action header-action--wishlist"
+                aria-label="Wishlist"
+              >
+                <img src="../assets/icons/heart-icon.svg" />
+                <span
+                  id="headerWishlistBadge"
+                  class="header-action__badge header-action__badge--wishlist"
+                  style="display: none"
+                  >0</span
+                >
+              </a>
+
+              <div class="header-user" id="headerUser">
+                <button
+                  class="header-action header-action--user"
+                  id="userIcon"
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <img id="userIconImg" src="../assets/icons/user-icon.svg" />
+                </button>
+
+                <div class="user-menu" id="userMenu" hidden>
+                  <div class="user-menu__head">
+                    <img
+                      class="user-menu__avatar"
+                      id="userMenuAvatar"
+                      src="https://i.pravatar.cc/80?img=32"
+                      alt="User avatar"
+                    />
+
+                    <div class="user-menu__meta">
+                      <div class="user-menu__name" id="userMenuName">
+                        Your name
+                      </div>
+                      <div class="user-menu__email" id="userMenuEmail">
+                        yourname@gmail.com
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="user-menu__divider"></div>
+
+                  <button class="user-menu__item" type="button" id="menuSignIn">
+                    <span class="user-menu__icon">↪</span>
+                    <span class="user-menu__text">Sign in</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuAdminDashboard"
+                    hidden
+                  >
+                    <span class="user-menu__icon">🛠️</span>
+                    <span class="user-menu__text">Admin Dashboard</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuMyProfile"
+                  >
+                    <span class="user-menu__icon">👤</span>
+                    <span class="user-menu__text">My Profile</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <button
+                    class="user-menu__item"
+                    type="button"
+                    id="menuSettings"
+                  >
+                    <span class="user-menu__icon">⚙</span>
+                    <span class="user-menu__text">Settings</span>
+                    <span class="user-menu__chev">›</span>
+                  </button>
+
+                  <div
+                    class="user-menu__item user-menu__item--has-sub"
+                    id="menuNotification"
+                  >
+                    <div class="user-menu__row">
+                      <span class="user-menu__icon">🔔</span>
+                      <span class="user-menu__text">Notification</span>
+                      <span class="user-menu__chev">›</span>
+                    </div>
+
+                    <div class="user-menu__sub" id="notificationSubmenu">
+                      <button type="button" class="user-menu__subitem">
+                        Allow
+                      </button>
+                      <button type="button" class="user-menu__subitem">
+                        Mute
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="user-menu__item" type="button" id="menuLogout">
+                    <span class="user-menu__icon">↩</span>
+                    <span class="user-menu__text">Log Out</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav class="header-nav">
+            <ul class="header-nav__list">
+              <li><a href="../index.html">Home</a></li>
+              <li><a id="navShop" href="#">Shop</a></li>
+              <li><a id="navSupport" href="./support.html">Support</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="support-page">
+      <div class="o-container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a> &gt; <strong>Support</strong>
+        </div>
+
+        <div class="support-layout">
+          <aside class="support-card">
+            <div class="support-info-block">
+              <div class="support-info-head">
+                <img src="../assets/icons/phone-icon.svg" aria-hidden="true" />
+                <div>Call To Us</div>
+              </div>
+              <div class="support-info-text">
+                We are available 24/7, 7 days a week.
+              </div>
+              <div class="support-info-meta">Phone: +8801611112222</div>
+            </div>
+
+            <div class="support-info-block">
+              <div class="support-info-head">
+                <img src="../assets/icons/mail-icon.svg" aria-hidden="true" />
+                <div>Write To Us</div>
+              </div>
+              <div class="support-info-text">
+                Fill out our form and we will contact you within 24 hours.
+              </div>
+              <div class="support-info-meta">
+                Emails: customer@exclusive.com
+              </div>
+              <div class="support-info-meta">Emails: support@exclusive.com</div>
+            </div>
+          </aside>
+
+          <section class="support-card">
+            <form class="support-form" id="supportForm" action="#">
+              <div class="support-form__row">
+                <div class="support-field">
+                  <label class="support-label" for="supportName"
+                    >Your name *</label
+                  >
+                  <input
+                    class="support-input"
+                    id="supportName"
+                    type="text"
+                    placeholder="Enter name..."
+                  />
+                </div>
+                <div class="support-field">
+                  <label class="support-label" for="supportEmail"
+                    >Email *</label
+                  >
+                  <input
+                    class="support-input"
+                    id="supportEmail"
+                    type="email"
+                    placeholder="Enter email..."
+                  />
+                </div>
+                <div class="support-field">
+                  <label class="support-label" for="supportPhone"
+                    >Phone Number *</label
+                  >
+                  <input
+                    class="support-input"
+                    id="supportPhone"
+                    type="tel"
+                    placeholder="Ex: 0912345678"
+                  />
+                </div>
+              </div>
+              <textarea
+                class="support-textarea"
+                id="supportMessage"
+                placeholder="Nội dung yêu cầu tối thiểu 50 ký tự..."
+              ></textarea>
+              <button class="btn support-submit" type="submit">
+                Send Message
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div class="site-footer">
+      <div class="o-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-col__title">Exclusive</div>
+            <div class="footer-col__subtitle">Subscribe</div>
+            <div class="footer-text">Get 10% off your first order</div>
+
+            <div class="footer-subscribe" style="margin-top: 14px">
+              <div class="footer-subscribe__field">
+                <input type="email" placeholder="Enter your email" />
+                <button type="button" aria-label="Send">➤</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Support</div>
+            <div class="footer-text">
+              111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              exclusive@gmail.com
+            </div>
+            <div class="footer-text" style="margin-top: 10px">
+              +88015-88888-9999
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Account</div>
+            <ul class="footer-list">
+              <li><a href="#">My Account</a></li>
+              <li><a href="./login.html">Login / Register</a></li>
+              <li><a href="./cart.html">Cart</a></li>
+              <li><a href="./wishlist.html">Wishlist</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Quick Link</div>
+            <ul class="footer-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col__title">Download App</div>
+            <div class="footer-text">Save ₫3 with App New User Only</div>
+
+            <div class="footer-download">
+              <div class="footer-download__row">
+                <img class="footer-qr" src="../assets/images/QR-code.jpg" />
+                <div class="store-badges">
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/gg-play-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                  <div class="store-badge">
+                    <img
+                      src="../assets/icons/app-store-logo.png"
+                      alt="gg-play-logo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-social" aria-label="Social links">
+                <a href="#" aria-label="Facebook">
+                  <img src="../assets/icons/Icon-Facebook.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <img src="../assets/icons/Icon-Twitter.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <img src="../assets/icons/icon-instagram.png" alt="icon" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <img src="../assets/icons/Icon-Linkedin.png" alt="icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © Copyright Rimel 2022. All right reserved
+        </div>
+      </div>
+    </div>
+
+    <script defer src="../js/pages/support.js"></script>
+    <script defer src="../js/header.js"></script>
+  </body>
+</html>
